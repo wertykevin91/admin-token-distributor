@@ -3,7 +3,10 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Administrator Panel.">
         <title>
             Welcome | Administrator Panel
         </title>
@@ -14,21 +17,15 @@
             crossorigin="anonymous">
         </script>
         <!--Get Bootstrap & Jquery-->
-        <link rel="stylesheet" 
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-            crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
-
-        </div>
-
         <script 
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
             crossorigin="anonymous">
         </script>
+        <link rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
         <script 
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
@@ -39,6 +36,111 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
             crossorigin="anonymous">
         </script>
+    </head>
+    <body class="container-fluid">
+        <header class="container">
+            <h1>Administrator Utility Panel</h1>
+            <small class="text-muted">WARNING! Page is still under heavy testing!</small>
+            <small class="text-muted">Only for shares at <a target="_blank" href="https://ropsten.etherscan.io/token/0xA3589856cb0E46e99A3B91F14A99d2342C4a226D">0xA3589856cb0E46e99A3B91F14A99d2342C4a226D</a></small>
+        </header>
+
+        <div class="container">
+            <section class="card">
+                <h2 class="card-header">Check Share Balance</h2>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="checkBalanceAddress">Ethereum Address</label>
+                        <input aria-describedby="checkBalanceAddressHelp" type="text" name="checkBalanceAddress" id="checkBalanceAddress" class="form-control" placeholder="Enter Ethereum address">
+                        <small id="checkBalanceAddressHelp" class="form-text text-muted">Only checking shares of 0xA3589856cb0E46e99A3B91F14A99d2342C4a226D</small>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="button" id="getTokenBalance">Get Balance</button>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="checkBalanceBalance">Balance</label>
+                        <input placeholder="Balance will be displayed here" readonly="readonly" type="text" name="checkBalanceBalance" id="checkBalanceBalance" class="form-control">
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="card">
+                <h2 class="card-header">Transfer Shares - UNDER CONSTRUCTION</h2>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="getTokenAddress">Destination Ethereum Address</label>
+                        <input disabled="disabled" id="getTokenAddress" name="getTokenAddress" type="text" class="form-control" placeholder="Enter ethereum address">
+                    </div>
+                    <div class="form-group">
+                        <label for="getTokenAmount">Amount</label>
+                        <input disabled="disabled" aria-describedby="getTokenAmountHelp" id="getTokenAmount" name="getTokenAmount" type="number" class="form-control" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <button disabled="disabled" id="getTokens" type="button" class="btn btn-success">Transfer</button>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>Transaction Hash</label>
+                        <div id="transactionEtherscanLink">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="card">
+                <h2 class="card-header">Transfer Shares For - UNDER CONSTRUCTION</h2>
+                <div class="card-body">
+                    <p class="card-text">Transfer shares on behalf of an address to another address.</small>
+                    <div class="form-group">
+                        <label>From (Ethereum Address)</label>
+                        <input disabled="disabled" type="text" class="form-control" placeholder="Enter source Ethereum address">
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input disabled="disabled" type="number" class="form-control" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label>To (Ethereum Address)</label>
+                        <input disabled="disabled" type="text" class="form-control" placeholder="Enter destination Ethereum addresss">
+                    </div>
+                    <div class="form-group">
+                        <button disabled="disabled" id="transferForTokens" type="button" class="btn btn-success">Transfer</button>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label>Transaction Hash</label>
+                        <div id="transferForTransactionEtherscanLink">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section class="card">
+                <h2 class="card-header">Share Issuance/Split - UNDER CONSTRUCTION</h2>
+                <div class="card-body">
+                    <p class="card-text">Implementation does not need to be done yet.</p>
+                </div>
+            </section>
+            <br>
+            <section class="card">
+                <h2 class="card-header">Share Redemption - UNDER CONSTRUCTION</h2>
+                <div class="card-body">
+                    <p class="card-text">Implementation does not need to be done yet.</p>
+                </div>
+            </section>
+            <br>
+            <section class="card">
+                <h2 class="card-header">Check Shareholder</h2>
+                <div class="card-body">
+                    <p class="card-text">UNDER CONSTRUCTION - Implementation does not need to be done yet.</p>
+                </div>
+            </section>
+            <br>
+        </div>
+
+        <script type="text/javascript" src="scripts/vendor/bignumber.min.js"></script>
         <script type="text/javascript" src="scripts/app/index.js"></script>
     </body>
 </html>
