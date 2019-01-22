@@ -1,6 +1,6 @@
 $(async() => {
 
-    console.log(web3);
+    //console.log(web3);
     var web3Instance = null;
     if (typeof web3 !== 'undefined') {
         web3Instance = new Web3(web3.currentProvider);
@@ -18,7 +18,7 @@ $(async() => {
     else {
         // Set the provider you want from Web3.providers
         //web3Instance = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-        alert("Web3 instance not found.");
+        console.log("Web3 instance not found.");
     }
 
     // set token configuration.
@@ -364,6 +364,18 @@ $(async() => {
       ];
     var businessLogicContract = new web3Instance.eth.Contract(jsonInterface, tokenConfig.tokenContractAddress);
 
+    // Handle token get balance
+
+    $('#getTokenBalance').click(async()=>{
+        let address = $('#checkBalanceAddress').val().trim();
+        //console.log(add);
+        console.log(businessLogicContract.methods.balanceOf);
+        let balance = await businessLogicContract.methods.balanceOf(address).call();
+
+        let bnBalance = new BigNumber(balance.toString()).div(new BigNumber("1000000000000000000"));
+        $('#checkBalanceBalance').val(bnBalance.toString());
+    });
+
     // Handle token transfer
 
     $('#tokenTransfer').click(async() => {
@@ -376,14 +388,35 @@ $(async() => {
 
     });
 
-    // Handle token get balance
-    $('#getTokenBalance').click(async()=>{
-        let address = $('#checkBalanceAddress').val().trim();
-        //console.log(add);
-        console.log(businessLogicContract.methods.balanceOf);
-        let balance = await businessLogicContract.methods.balanceOf(address).call();
+    // Issue shares to an address
 
-        let bnBalance = new BigNumber(balance.toString()).div(new BigNumber("1000000000000000000"));
-        $('#checkBalanceBalance').val(bnBalance.toString());
+    $('#issueShares').click(async()=>{
+
     });
+
+    // Burning shares
+
+    $('#redeemShares').click(async()=>{
+
+    });
+
+    // Function to check shareholder information
+
+    $('#checkShareholder').click(async()=>{
+      
+    });
+
+    // Function to update shareholder information
+
+    $('#updateShareholder').click(async()=>{
+
+    });
+
+    // initialize some items in the UI
+
+    const initUIFunction = async()=>{
+      console.log("UI Initialization Successful");
+    };
+
+    initUIFunction();
 });
