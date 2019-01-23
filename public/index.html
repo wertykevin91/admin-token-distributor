@@ -7,6 +7,9 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Administrator Panel.">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
         <title>
             Welcome | Administrator Panel
         </title>
@@ -41,7 +44,7 @@
         <header class="container">
             <h1>Administrator Utility Panel</h1>
             <small class="text-muted">WARNING! Page is still under heavy testing!</small>
-            <small class="text-muted">Only for shares at <a target="_blank" href="https://ropsten.etherscan.io/token/0xA3589856cb0E46e99A3B91F14A99d2342C4a226D">0xA3589856cb0E46e99A3B91F14A99d2342C4a226D</a></small>
+            <small class="text-muted">Only for shares at <a target="_blank" href="https://ropsten.etherscan.io/token/0xA3EC1462A3c30eEa7c73426F0D2342d0a37B5edc">0xA3EC1462A3c30eEa7c73426F0D2342d0a37B5edc</a></small>
         </header>
 
         <div class="container">
@@ -51,7 +54,7 @@
                     <div class="form-group">
                         <label for="checkBalanceAddress">Ethereum Address</label>
                         <input aria-describedby="checkBalanceAddressHelp" type="text" name="checkBalanceAddress" id="checkBalanceAddress" class="form-control" placeholder="Enter Ethereum address">
-                        <small id="checkBalanceAddressHelp" class="form-text text-muted">Only checking shares of 0xA3589856cb0E46e99A3B91F14A99d2342C4a226D</small>
+                        <small id="checkBalanceAddressHelp" class="form-text text-muted">Only checking shares of 0xA3EC1462A3c30eEa7c73426F0D2342d0a37B5edc</small>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-default" type="button" id="getTokenBalance">Get Balance</button>
@@ -65,7 +68,7 @@
             </section>
             <br>
             <section class="card">
-                <h2 class="card-header">Transfer Shares <span class="badge badge-secondary">UNDER CONSTRUCTION</span></h2>
+                <h2 class="card-header">Transfer Shares</h2>
                 <div class="card-body">
                     <!-- <div class="form-group">
                         <label for="currentAddress">Current Address</label>
@@ -77,14 +80,14 @@
                     </div> -->
                     <div class="form-group">
                         <label for="transferShareDestinationAddress">To (Ethereum Address)</label>
-                        <input disabled="disabled" id="transferShareDestinationAddress" name="transferShareDestinationAddress" type="text" class="form-control" placeholder="Enter destination ethereum address">
+                        <input id="transferShareDestinationAddress" name="transferShareDestinationAddress" type="text" class="form-control" placeholder="Enter destination ethereum address">
                     </div>
                     <div class="form-group">
                         <label for="transferShareAmount">Amount</label>
-                        <input disabled="disabled" aria-describedby="transferShareAmount" id="transferShareAmount" name="transferShareAmount" type="number" class="form-control" placeholder="Enter amount">
+                        <input aria-describedby="transferShareAmount" id="transferShareAmount" name="transferShareAmount" type="number" class="form-control" placeholder="Enter amount">
                     </div>
                     <div class="form-group">
-                        <button disabled="disabled" id="tokenTransfer" type="button" class="btn btn-success">Transfer</button>
+                        <button id="tokenTransfer" type="button" class="btn btn-success">Transfer</button>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -97,23 +100,23 @@
             </section>
             <br>
             <section class="card">
-                <h2 class="card-header">Transfer Shares For <span class="badge badge-secondary">UNDER CONSTRUCTION</span></h2>
+                <h2 class="card-header">Transfer Shares For</h2>
                 <div class="card-body">
                     <p class="card-text">Transfer shares on behalf of an address to another address.</small>
                     <div class="form-group">
                         <label for="transferForFrom">From (Ethereum Address)</label>
-                        <input disabled="disabled" aria-describedby="transferForFrom" id="transferForFrom" name="transferForFrom" type="text" class="form-control" placeholder="Enter source Ethereum address">
+                        <input aria-describedby="transferForFrom" id="transferForFrom" name="transferForFrom" type="text" class="form-control" placeholder="Enter source Ethereum address">
                     </div>
                     <div class="form-group">
                         <label for="transferForAmount">Amount</label>
-                        <input disabled="disabled" aria-describedby="transferForAmount" id="transferForAmount" name="transferForAmount" type="number" class="form-control" placeholder="Enter amount">
+                        <input aria-describedby="transferForAmount" id="transferForAmount" name="transferForAmount" type="number" class="form-control" placeholder="Enter amount">
                     </div>
                     <div class="form-group">
                         <label for="transferForDestination">To (Ethereum Address)</label>
-                        <input disabled="disabled" aria-describedby="transferForDestination" id="transferForDestination" name="transferForDestination" type="text" class="form-control" placeholder="Enter destination Ethereum addresss">
+                        <input aria-describedby="transferForDestination" id="transferForDestination" name="transferForDestination" type="text" class="form-control" placeholder="Enter destination Ethereum addresss">
                     </div>
                     <div class="form-group">
-                        <button disabled="disabled" id="tokenTransferFor" type="button" class="btn btn-success">Transfer For</button>
+                        <button id="tokenTransferFor" type="button" class="btn btn-success">Transfer For</button>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -126,18 +129,18 @@
             </section>
             <br>
             <section class="card">
-                <h2 class="card-header">Share Issuance/Split <span class="badge badge-secondary">UNDER CONSTRUCTION</span></h2>
+                <h2 class="card-header">Share Issuance/Split </h2>
                 <div class="card-body">
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="issueShareTo">To (Ethereum Address)</label>
                         <input disabled="disabled" aria-describedby="issueShareTo" id="issueShareTo" name="issueShareTo" type="text" class="form-control" placeholder="Enter destination Ethereum address">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="issueShareAmount">Amount</label>
-                        <input disabled="disabled" aria-describedby="issueShareAmount" id="issueShareAmount" name="issueShareAmount" type="number" class="form-control" placeholder="Enter amount">
+                        <input aria-describedby="issueShareAmount" id="issueShareAmount" name="issueShareAmount" type="number" class="form-control" placeholder="Enter amount">
                     </div>
                     <div class="form-group">
-                        <button disabled="disabled" id="issueShares" type="button" class="btn btn-success">Issue</button>
+                        <button id="issueShares" type="button" class="btn btn-success">Issue</button>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -150,7 +153,7 @@
             </section>
             <br>
             <section class="card">
-                <h2 class="card-header">Share Redemption <span class="badge badge-secondary">UNDER CONSTRUCTION</span></h2>
+                <h2 class="card-header">Share Redemption </h2>
                 <div class="card-body">
                     <!-- <div class="form-group">
                         <label for="redeemShareFrom">From (Ethereum Address)</label>
@@ -158,10 +161,10 @@
                     </div> -->
                     <div class="form-group">
                         <label for="redeemShareAmount">Amount</label>
-                        <input disabled="disabled" aria-describedby="redeemShareAmount" id="redeemShareAmount" name="redeemShareAmount" type="number" class="form-control" placeholder="Enter amount">
+                        <input aria-describedby="redeemShareAmount" id="redeemShareAmount" name="redeemShareAmount" type="number" class="form-control" placeholder="Enter amount">
                     </div>
                     <div class="form-group">
-                        <button disabled="disabled" id="redeemShares" type="button" class="btn btn-success">Redeem</button>
+                        <button id="redeemShares" type="button" class="btn btn-success">Redeem</button>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -174,14 +177,14 @@
             </section>
             <br>
             <section class="card">
-                <h2 class="card-header">Check Shareholder <span class="badge badge-secondary">UNDER CONSTRUCTION</span></h2>
+                <h2 class="card-header">Check Shareholder UID </h2>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="checkShareholderAddress">Shareholder Address</label>
-                        <input disabled="disabled" aria-describedby="checkShareholderAddress" id="checkShareholderAddress" name="checkShareholderAddress" type="text" class="form-control" placeholder="Shareholder (Ethereun Address)">
+                        <input aria-describedby="checkShareholderAddress" id="checkShareholderAddress" name="checkShareholderAddress" type="text" class="form-control" placeholder="Shareholder (Ethereun Address)">
                     </div>
                     <div class="form-group">
-                        <button disabled="disabled" id="checkShareholder" type="button" class="btn btn-success">Check Shareholder</button>
+                        <button id="checkShareholder" type="button" class="btn btn-success">Check Shareholder</button>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -192,18 +195,18 @@
             </section>
             <br>
             <section class="card">
-                <h2 class="card-header">Update Shareholder <span class="badge badge-secondary">UNDER CONSTRUCTION</span></h2>
+                <h2 class="card-header">Update Shareholder UID </h2>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="updateShareholderAddress">Shareholder Address</label>
-                        <input disabled="disabled" aria-describedby="updateShareholderAddress" id="updateShareholderAddress" name="updateShareholderAddress" type="text" class="form-control" placeholder="Shareholder (Ethereun Address)">
+                        <input aria-describedby="updateShareholderAddress" id="updateShareholderAddress" name="updateShareholderAddress" type="text" class="form-control" placeholder="Shareholder (Ethereun Address)">
                     </div>
                     <div class="form-group">
                         <label for="updateShareholderUID">Shareholder UID</label>
-                        <input disabled="disabled" aria-describedby="updateShareholderUID" id="updateShareholderUID" name="updateShareholderUID" type="text" class="form-control" placeholder="Shareholder UID">
+                        <input aria-describedby="updateShareholderUID" id="updateShareholderUID" name="updateShareholderUID" type="text" class="form-control" placeholder="Shareholder UID">
                     </div>
                     <div class="form-group">
-                        <button disabled="disabled" id="updateShareholder" type="button" class="btn btn-success">Check Shareholder</button>
+                        <button id="updateShareholder" type="button" class="btn btn-success">Check Shareholder</button>
                     </div>
                     <hr>
                     <div class="form-group">
